@@ -5,7 +5,7 @@ import { AuthContext } from "../context";
 
 export const useLogin = () => {
     
-    const { doLogin } = useContext(AuthContext);
+    const { doLogin, isaAuthenticating } = useContext(AuthContext);
 
     const { form, onChange, username, password, isPasswordValid, isUserNameValid, formErrors, formValid, setState } = useForm({ 
         username: '',
@@ -60,6 +60,7 @@ export const useLogin = () => {
         onChange,
         isPasswordValid,
         isUserNameValid,
+        isaAuthenticating,
         formErrors,
         formValid,
 

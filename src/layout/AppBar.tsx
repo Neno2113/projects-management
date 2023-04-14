@@ -1,9 +1,19 @@
-import { GridItem, HStack, Icon, Text, InputGroup, InputLeftElement, Input, IconButton, Divider, Wrap, WrapItem, Avatar } from "@chakra-ui/react"
+import { GridItem, HStack, Icon, Text, InputGroup, InputLeftElement, Input, IconButton, Menu, 
+    MenuList, MenuItem, Wrap, WrapItem, Avatar, MenuButton } from "@chakra-ui/react"
+import { BiLogOutCircle } from "react-icons/bi"
 import { CiSearch } from "react-icons/ci"
 import { RiMenu5Fill } from "react-icons/ri"
 import { TiPlus } from "react-icons/ti"
+import { useContext } from 'react';
+import { AuthContext } from "../auth/context"
+import { upperCaseFirstLetter } from "../helpers"
+
+const imgURL = import.meta.env.VITE_IMGURL;
 
 export const AppBar = () => {
+
+    const {  user, logout } = useContext(AuthContext);
+
   return (
     <GridItem colSpan={12}  w='full'>
         <HStack justifyContent={{ xl: 'space-between', sm:'center'}} px={10} py={5} w='full'>
@@ -45,8 +55,26 @@ export const AppBar = () => {
                 />
                 <Wrap>
                     <WrapItem>
-                        <Avatar name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
-                        <Text alignSelf='center' as='b' ml={2}>Anel D.</Text>
+                        <Menu direction="ltr">
+                            <MenuButton  >
+                                <Avatar name={`${user?.name} ${user?.lastname}`} src={`${imgURL}${user?._id}`} />
+                                <Text 
+                                    fontSize='xl'  
+                                    as='b' 
+                                    ml={2}
+                                >
+                                    { upperCaseFirstLetter(user?.name!)} { user?.lastname.charAt(0).toLocaleUpperCase()}
+                                </Text>
+                            </MenuButton>
+                            <MenuList>
+                                <MenuItem 
+                                    icon={<BiLogOutCircle />} 
+                                    onClick={ logout }
+                                >
+                                    Logout
+                                </MenuItem>
+                            </MenuList>
+                        </Menu>
                     </WrapItem>
                 </Wrap>
 
