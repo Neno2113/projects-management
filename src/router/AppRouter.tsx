@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import { HomeView,  } from "../views";
+import { HomeView, ProjectsFormView  } from "../projects/views";
 import { LoginPage, SignUpView, UsersView } from "../auth/page";
 import { PrivateRoute } from "./PrivateRoute";
 import { PublicRoute } from "./PublicRoute";
@@ -18,6 +18,7 @@ export const router = createBrowserRouter([
         { path: '/', element:  <HomeView />},
         { path: '/user-register/:id?', element: <SignUpView />},
         { path: '/users', element: <UsersView />},
+        { path: '/projects-register', element: <ProjectsFormView />},
       ],
     },
     {

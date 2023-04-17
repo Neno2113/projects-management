@@ -43,7 +43,7 @@ export const SignUpView = () => {
             >
             <VStack w="full" h="full" pb={0} px={10}  spacing={3} alignItems="flex-start">
                 <VStack spacing={0} alignItems='flex-start'>
-                    <Heading size="xl">{ (id) ? "Actualizar Usuario" : "Crear Usuario"}</Heading>
+                    <Heading size="xl" fontFamily="mono">{ (id) ? "Actualizar Usuario" : "Crear Usuario"}</Heading>
                 </VStack>
                 <SimpleGrid columns={2} columnGap={3} rowGap={6} w='full'>
                     <GridItem colSpan={2}>

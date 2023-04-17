@@ -1,5 +1,6 @@
 import { GridItem, HStack, Icon, Text, InputGroup, InputLeftElement, Input, IconButton, Menu, 
     MenuList, MenuItem, Wrap, WrapItem, Avatar, MenuButton } from "@chakra-ui/react"
+import { useNavigate } from "react-router-dom"
 import { BiLogOutCircle } from "react-icons/bi"
 import { CiSearch } from "react-icons/ci"
 import { RiMenu5Fill } from "react-icons/ri"
@@ -13,6 +14,11 @@ const imgURL = import.meta.env.VITE_IMGURL;
 export const AppBar = () => {
 
     const {  user, logout } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const onPlusClick = () => {
+        navigate('/projects-register')
+    }
 
   return (
     <GridItem colSpan={12}  w='full'>
@@ -52,6 +58,7 @@ export const AppBar = () => {
                     borderRadius='full'
                     color='white'
                     _hover={{ bg: "#3d3a54"  }}
+                    onClick={ onPlusClick }
                 />
                 <Wrap>
                     <WrapItem>

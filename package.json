@@ -15,10 +15,12 @@
     "axios": "^1.3.5",
     "chakra-multiselect": "^0.4.1",
     "framer-motion": "^10.10.0",
+    "quill-task-list": "^1.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-query": "^3.39.3",
+    "react-quill": "^2.0.0",
     "react-router-dom": "^6.10.0"
   },
   "devDependencies": {

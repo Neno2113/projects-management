@@ -1,3 +1,3 @@
 export { ProjectComments } from "./ProjectComments";
-export { ProjectIndicator } from "./ProjectIndicator";
+export { ProjectIndicator } from "../components/ProjectIndicator";
 export { MenuItem } from "./MenuItem";

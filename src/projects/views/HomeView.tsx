@@ -1,11 +1,23 @@
 import { HStack, Icon, SimpleGrid, GridItem, Text, Flex, Box, Divider, Heading, VStack } from "@chakra-ui/react"
 import { AiOutlineMenu } from "react-icons/ai"
-import { ProjectCard } from "../components"
-import { CardVariant } from "../components/ProjectCard"
-import { ProjectIndicator } from "../ui/ProjectIndicator"
-import { ProjectComments } from "../ui"
+import { ProjectCard } from "../../components"
+import { CardVariant } from "../../components/ProjectCard"
+import { ProjectIndicator } from "../../components/ProjectIndicator"
+import { ProjectComments } from "../../ui"
+import { FaLaptopCode, FaPeopleCarry } from 'react-icons/fa';
+import { GiThink } from 'react-icons/gi';
+import { MdOutlineCloudDone, MdOutlineDesignServices } from  "react-icons/md";
+import { useState } from "react"
 
 export const HomeView = () => {
+
+    // const [ toggleTag, setToggleTag ] = useState(false); 
+
+    const onToggleTag = () => {
+        // setToggleTag(!toggleTag);
+    }
+
+
     return (
         <Flex 
             // justifyContent=''
@@ -28,11 +40,12 @@ export const HomeView = () => {
                     <Text as='b' fontSize='xl'>March, 2023</Text>
                 </HStack>
                 <HStack w='full'>
-                    <HStack mt={5} spacing={20} w='80%'>
-                    <ProjectIndicator indicatorText='In Progress' number='15' />
-                    <ProjectIndicator indicatorText='In Progress' number='45' />
-                    <ProjectIndicator indicatorText='Upcoming' number='10' />
-                    <ProjectIndicator indicatorText='Total Projects' number='20' />
+                    <HStack mt={5} spacing={5} w='80%'>
+                        <ProjectIndicator icon={FaPeopleCarry}  color="twitter" indicatorText='Levantamiento' number='15' />
+                        <ProjectIndicator icon={ GiThink }  color="cyan" indicatorText='Analisis' number='45' />
+                        <ProjectIndicator icon={ MdOutlineDesignServices }  color="facebook" indicatorText='Diseño' number='10' />
+                        <ProjectIndicator icon={ FaLaptopCode }  color="teal" indicatorText='Desarrollo' number='20' />
+                        <ProjectIndicator icon={ MdOutlineCloudDone }  color="whatsapp" indicatorText='Terminado' number='20' />
                     </HStack>
                     <HStack justifyContent='flex-end' w='20%'>
                     <Icon as={ AiOutlineMenu }  fontSize='3xl'/>
